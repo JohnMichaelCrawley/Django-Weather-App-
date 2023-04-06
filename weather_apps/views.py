@@ -31,4 +31,4 @@ def index(request):
         }
     else:
         data = {}
-    return render(request, "weather_apps/index.html", data)
+    return render(request, "weather_apps/static/index.html", data)
