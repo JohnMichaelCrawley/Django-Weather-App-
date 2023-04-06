@@ -1,0 +1,46 @@
+/* Body */
+body 
+{
+  background-color: lightblue !important;
+}
+
+/* Boxing */
+nav, .results, .credits, .form-control
+{
+  text-align: center;
+  border-bottom: 1px solid black;
+  box-shadow: 1px 1px;
+  background-color: white;
+
+}
+/* Header / Navigation */
+nav
+{
+    width: auto;
+    height: 65px !important;
+}
+/* Results */
+.results
+{
+  width: 70%;
+  height: 500px;
+  margin-top: 10px !important;
+  margin: 0 auto;
+}
+
+/* Credits */
+.credits
+{
+  width: 70%;
+  height: auto;
+  margin-top: 10px !important;
+  padding: 10px;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+/* Text / Fonts */
+.box-title
+{
+  text-align: center;
+}
