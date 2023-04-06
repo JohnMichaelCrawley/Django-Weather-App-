@@ -1,6 +1,7 @@
 from django.shortcuts import render
 # import json to load json data to python dictionary
 import json
+import os
 # urllib.request to make a request to api
 import urllib.request
 
@@ -10,13 +11,12 @@ def index(request):
         city = request.POST['city']
         ''' api key might be expired use your own api_key
             place api_key in place of appid ="your_api_key_here "  '''
+        api_key = os.environ.get('API_KEY')
 
         # source contain JSON data from API
 
-        source = urllib.request.urlopen(
-            'http://api.openweathermap.org/data/2.5/weather?q ='
-            + city + '&appid = your_api_key_here').read()
-
+        url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
+        source = urllib.request.urlopen(url).read()
         # converting JSON data to a dictionary
         list_of_data = json.loads(source)
 
