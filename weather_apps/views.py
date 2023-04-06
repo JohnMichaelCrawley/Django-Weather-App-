@@ -29,7 +29,6 @@ def index(request):
             "pressure": str(list_of_data['main']['pressure']),
             "humidity": str(list_of_data['main']['humidity']),
         }
-        print(data)
     else:
         data = {}
-    return render(request, "main/index.html", data)
+    return render(request, "weather_apps/index.html", data)
