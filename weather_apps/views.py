@@ -11,7 +11,7 @@ def index(request):
         city = request.POST['city']
         ''' api key might be expired use your own api_key
             place api_key in place of appid ="your_api_key_here "  '''
-        api_key = ""
+        api_key = os.environ.get('API_KEY')
 
         # source contain JSON data from API
 
