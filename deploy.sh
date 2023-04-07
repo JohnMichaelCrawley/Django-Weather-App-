@@ -11,4 +11,4 @@ virtualenv venv
 source venv/bin/activate
 pip3 install django
 # Start the application with the process name weather_app using pm2
-python manage.py runserver 0.0.0.0:3000
+nohup python manage.py runserver 0.0.0.0:3000 > /dev/null 2>&1 &
