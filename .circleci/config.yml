@@ -37,9 +37,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:10.16.3
-    environment:
-      API_KEY: $API_KEY
     steps:
       - run:
           name: deploy-application
-          command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS "rm -rf Django-Weather-App-/;git clone https://github.com/JohnMichaelCrawley/Django-Weather-App-.git; source Django-Weather-App-/deploy.sh"
+          command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS "export API_KEY=$API_KEY; rm -rf Django-Weather-App-/;git clone https://github.com/JohnMichaelCrawley/Django-Weather-App-.git; source Django-Weather-App-/deploy.sh"
