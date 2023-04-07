@@ -14,4 +14,4 @@ pip3 install django
 echo $PRIVATE_KEY > privatekey.pem
 echo $SERVER > server.crt
 # Start the application with the process name weather_app using pm2
-nohup python manage.py runserver 0.0.0.0:3000 > /dev/null 2>&1 &
+python manage.py runsslserver 0.0.0.0:8443 --certificate cert.pem --key key.pem > /dev/null 2>&1 &
