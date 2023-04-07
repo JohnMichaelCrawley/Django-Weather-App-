@@ -10,6 +10,7 @@ sudo -H pip3 install virtualenv
 virtualenv venv
 source venv/bin/activate
 pip3 install django
+pip3 install django-sslserver
 
 echo $PRIVATE_KEY > privatekey.pem
 echo $SERVER > server.crt
