@@ -38,7 +38,7 @@ jobs:
     docker:
       - image: circleci/node:10.16.3
     environment:
-      API_KEY: %API_KEY
+      API_KEY: $API_KEY
     steps:
       - run:
           name: deploy-application
