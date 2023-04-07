@@ -1,12 +1,13 @@
 # !/usr/bin/env bash
-sudo apt update && sudo apt install nodejs npm
-# Install pm2 which is a production process amanger for Node.js with a built-in load balancer.
-sudo npm install -g pm2
+sudo apt update && sudo apt install python3-pip python3-dev libpq-dev nginx git
 # Stop any instance of our application running currently
-pm2 stop weather_app
+killall python
 # change directory into folder where application is downloaded
-cd WeatherApp/
+cd Django-Weather-App-/
 # Install application dependencies
-npm install
+sudo -H pip3 install --upgrade pip
+sudo -H pip3 install virtualenv
+virtualenv venv
+source venv/bin/activate
 # Start the application with the process name weather_app using pm2
-pm2 start ./bin/www -- name weather_app
+python manage.py runserver 0.0.0.0:3000
