@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My apps
-    'weather_apps'
+    'weather_apps',
+
+    # Third party apps
+    'sslserver',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
