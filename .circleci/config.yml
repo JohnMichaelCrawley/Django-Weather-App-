@@ -39,8 +39,5 @@ jobs:
       - image: circleci/node:10.16.3
     steps:
       - run:
-          name: set-env-vars
-          command: export API_KEY=$API_KEY
-      - run:
           name: deploy-application
           command: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_PUBLIC_DNS "rm -rf Django-Weather-App-/;git clone https://github.com/JohnMichaelCrawley/Django-Weather-App-.git; source Django-Weather-App-/deploy.sh"
