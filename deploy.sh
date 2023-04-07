@@ -14,5 +14,6 @@ pip3 install django-sslserver
 
 echo $PRIVATE_KEY > privatekey.pem
 echo $SERVER > server.crt
+echo $CERT > cert.pem
 # Start the application with the process name weather_app using pm2
-python manage.py runsslserver 0.0.0.0:8443 --certificate cert.pem --key key.pem > /dev/null 2>&1 &
+python manage.py runsslserver 0.0.0.0:8443 --certificate cert.pem --key privatekey.pem > /dev/null 2>&1 &
